@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 
 class Quote extends Component {
-    poistaKlikattu = (e) => {
+    poista = (e) => {
         console.log("Poista nappia klikattu");
-        this.props.removeQuote(this.state);
+        this.props.poista(this.props.id);
     }
 
     render() {
         return (
             <p id="sitaatti"><b>{this.props.id}</b><br /> {this.props.quote}<br></br><i>- {this.props.author}</i>
-            <button id="poista" type="button" onClick={this.poistaKlikattu}>X</button>
+            <button id="poista" type="button" onClick={this.poista}>X</button>
             </p>
         );
     }
