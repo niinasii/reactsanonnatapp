@@ -1,16 +1,14 @@
 import React from 'react';
-import logo from './Raspberry.svg';
 import './App.css';
 import QuoteBox from './components/QuoteBox';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>React Harjoitus</h1>
-        <img src={logo} className="App-logo" alt="logo" />
+      <header>
+        <h1>React lomake 2</h1>
       </header>
-      <main className="App-main">
+      <main>
         <QuoteBox />
       </main>
       <footer>

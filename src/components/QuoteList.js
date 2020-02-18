@@ -9,7 +9,7 @@ class QuoteList extends Component {
             );
         })
         return (
-            <div className="sitaatit">
+            <div id="sitaatit">
                 {quotes}
             </div>
         );

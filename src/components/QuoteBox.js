@@ -1,12 +1,21 @@
 import React, { Component } from 'react';
 import QuoteList from './QuoteList';
+import QuoteForm from './QuoteForm';
+var uuid = require('uuid');
 
 class QuoteBox extends Component {
+addNewQuote = (newquote) => { 
+    newquote.id = uuid();
+    this.state.sanonta.push(newquote);
+    console.log(newquote);
+    this.setState(newquote);
+}
     render() {
         return (
             <section>
+                <h2>Lisää sanonta</h2>
+                <QuoteForm addQuote={this.addNewQuote} />
                 <h2>Sanonnat</h2>
-                <QuoteForm addQuote={this.addNewQuote}
                 <QuoteList quotes={sanonta}/>
             </section>
         );
