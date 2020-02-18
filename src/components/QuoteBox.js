@@ -6,6 +6,7 @@ class QuoteBox extends Component {
         return (
             <section>
                 <h2>Sanonnat</h2>
+                <QuoteForm addQuote={this.addNewQuote}
                 <QuoteList quotes={sanonta}/>
             </section>
         );
