@@ -34,11 +34,33 @@ main {
 }
 
 #nappi {
-  margin-left: 58px;
+  margin-left: 68px;
+  margin-top: 5px;
+  padding: 8px;
+  background-color: white;
+  border: grey solid 1px;
+  color: black;
+}
+
+input {
+  background-color: white;
+  color: black;
+  border: grey solid 1px;
+  padding: 3px;
+}
+label {
+  margin: 5px;
 }
 
 #sitaatti {
   padding: 5px;
   margin: 5px;
   background-color: whitesmoke;
+}
+
+#poista {
+  background-color: black;
+  border: grey solid 1px;
+  color: white;
+  float: right;
 }

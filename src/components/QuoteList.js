@@ -5,7 +5,7 @@ class QuoteList extends Component {
     render() {
         const quotes = this.props.quotes.map(function(quote) {
             return (
-            <Quote key={quote.id} author={quote.author} quotetext={quote.quotetext} id={quote.id}/> 
+            <Quote key={quote.id} author={quote.author} quote={quote.quote} id={quote.id}/> 
             );
         })
         return (
