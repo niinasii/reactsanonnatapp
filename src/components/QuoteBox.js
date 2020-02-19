@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import QuoteList from './QuoteList';
 import QuoteForm from './QuoteForm';
-//var uuid = require('uuid');
 
 var sanonta = [
     { id: 1, author: 'Darth Vader', quote: 'Your lack of faith is disturbing' },
@@ -11,21 +10,18 @@ var sanonta = [
 ];
 
 class QuoteBox extends Component {
+
+state = {
+    sanonnat: []
+};
+
     constructor(props) {
         super(props);
 
-        //ID seuraava
-        var maxid = 1;
-        for (var i=0; i < sanonta.length; i++) {
-            if (sanonta[i].id > maxid) maxid = sanonta[i].id
-        }
-
-        this.state = { seuraavaid: maxid + 1, sanonta: sanonta };
+        this.state = {sanonta: sanonta };
     }
 
     addNewQuote = (newquote) => {
-        //newquote.id = uuid();
-        newquote.id = this.state.seuraavaid;
         this.state.sanonta.push(newquote);
         console.log(newquote);
         this.setState({seuraavaid: this.state.seuraavaid + 1});

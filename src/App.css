@@ -53,15 +53,18 @@ label {
 }
 
 #sitaatti {
-  padding: 5px;
-  margin: 5px;
+  padding: 10px;
+  padding-right: 0px;
   background-color: whitesmoke;
   width: 500px;
+  margin: 10px;
 }
 
-#poista {
+.nappi {
   background-color: black;
   border: grey solid 1px;
   color: white;
   float: right;
+  height: 30px;
+  width: 30px;
 }
