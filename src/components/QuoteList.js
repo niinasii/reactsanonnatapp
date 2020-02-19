@@ -6,7 +6,7 @@ class QuoteList extends Component {
         var self = this;
         const quotes = this.props.quotes.map(function(quote) {
             return (
-            <Quote key={quote.id} author={quote.author} quote={quote.quote} id={quote.id} poista={self.props.poista}/> 
+            <Quote key={quote.id} author={quote.author} quotetext={quote.quotetext} id={quote.id} poista={self.props.poista} update={self.props.update}/> 
             );
         })
         return (
