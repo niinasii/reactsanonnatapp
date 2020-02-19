@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import QuoteList from './QuoteList';
 import QuoteForm from './QuoteForm';
+var axios = require('axios');
 
 var sanonta = [
     { id: 1, author: 'Darth Vader', quote: 'Your lack of faith is disturbing' },
@@ -11,25 +12,33 @@ var sanonta = [
 
 class QuoteBox extends Component {
 
-state = {
-    sanonnat: []
-};
+    state = {
+        sanonnat: []
+    };
 
     constructor(props) {
         super(props);
+        this.state = { sanonta: sanonta };
+    }
 
-        this.state = {sanonta: sanonta };
+    componentDidMount = () => {
+        axios.get('http://localhost:8080/api/quotes')
+            .then(res => {
+                const oppilaat = res.data;
+                this.setState({ oppilaat });
+                console.log(oppilaat);
+            })
     }
 
     addNewQuote = (newquote) => {
         this.state.sanonta.push(newquote);
         console.log(newquote);
-        this.setState({seuraavaid: this.state.seuraavaid + 1});
+        this.setState({ seuraavaid: this.state.seuraavaid + 1 });
     }
 
     poista = (poistettavaID) => {
         console.log(poistettavaID)
-        var index = this.state.sanonta.findIndex((quot) => quot.id === poistettavaID );
+        var index = this.state.sanonta.findIndex((quot) => quot.id === poistettavaID);
         this.state.sanonta.splice(index, 1);
         this.setState(this.state);
     }
