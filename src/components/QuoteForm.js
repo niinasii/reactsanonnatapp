@@ -2,14 +2,16 @@ import React, { Component } from 'react';
 
 class QuoteForm extends Component {
 
-    state = { author: '', quote: '' }
+    state = { author: '', quotetext: '' }
     authorMuuttunut = (e) => { this.setState({ author: e.target.value }); }
-    sitaattiMuuttunut = (e) => { this.setState({ quote: e.target.value }); }
+    sitaattiMuuttunut = (e) => { this.setState({ quotetext: e.target.value }); }
 
-    nappiaKlikattu = (e) => {
-        console.log("Nappia klikattu");
+    nappiaKlikattu =()=> {
         this.props.addQuote(this.state);
+        this.setState({quotetext: '', author: ''});
+        console.log("Nappia klikattu");
     }
+
     render() {
         return (
             <div id="lomake">
@@ -21,7 +23,7 @@ class QuoteForm extends Component {
                                     <label htmlFor="author">Author: </label>
                                 </td>
                                 <td>
-                                    <input type="text" name="author" value={this.state.author} onChange={this.authorMuuttunut}></input>
+                                    <input type="text" name="author" value={this.state.author} onChange={this.authorMuuttunut}/>
                                 </td>
                             </tr>
                             <tr>
@@ -29,7 +31,7 @@ class QuoteForm extends Component {
                                     <label htmlFor="quote">Sitaatti: </label>
                                 </td>
                                 <td>
-                                    <input type="text" name="quote" value={this.state.quote} onChange={this.sitaattiMuuttunut}></input>
+                                    <input type="text" name="quotetext" value={this.state.quotetext} onChange={this.sitaattiMuuttunut}/>
                                 </td>
                             </tr>
                         </tbody>

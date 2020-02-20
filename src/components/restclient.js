@@ -8,7 +8,7 @@ function haesanonnat(callback) {
         })
 };
 
-export function luosanonta(sanonta, callback) {
+function luosanonta(sanonta, callback) {
     axios.post(restURL, sanonta)
     .then(function (response) {
         console.dir(response);
@@ -16,20 +16,23 @@ export function luosanonta(sanonta, callback) {
     });
 }
 
-function poistaSanonta(id) {
-    return axios.delete('/api/quotes/'+id)
+function poistasanonta(id) {
+    return axios.delete(restURL+'/'+id)
     .then(res=>{
         console.log("Rest: Deletoitu");
         console.dir(res);
     });
 }
 
-export function päivitäsanonta(sanonta, callback) {
-    return axios.put(restURL + 'quotes/', {
+function päivitäsanonta(sanonta, callback) {
+    return axios.put(restURL + 'quotes/', )
+    .then(res => {
+        console.log("Rest: Päivitetty");
+        console.dir(res);
     })
 }
 
-export {haesanonnat, poistaSanonta}
+export {haesanonnat, poistasanonta, luosanonta, päivitäsanonta}
 
 /* addNewQuote = (newquote) => {
     this.state.sanonta.push(newquote);

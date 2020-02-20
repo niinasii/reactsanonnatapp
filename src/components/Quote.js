@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 
 class Quote extends Component {
-    poista = (e) => {
+    poista = () => {
         console.log("Poista nappia klikattu");
         this.props.poista(this.props.id);
     }
 
-    update = (e) => {
+    update = () => {
         console.log("Update nappia klikattu");
         this.props.update(this.props.id);
     }
