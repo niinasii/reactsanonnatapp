@@ -1,4 +1,4 @@
-const restURL = "http://localhost:8080/api/quotes";
+const restURL = "http://localhost:4000/api/quotes"; //back-end serveri pyörii portissa 4000 ja apirajapinnalla on reititys
 var axios = require('axios');
 
 function haesanonnat(callback) {
@@ -24,25 +24,4 @@ function poistasanonta(id) {
     });
 }
 
-function päivitäsanonta(sanonta, callback) {
-    return axios.put(restURL + 'quotes/', )
-    .then(res => {
-        console.log("Rest: Päivitetty");
-        console.dir(res);
-    })
-}
-
-export {haesanonnat, poistasanonta, luosanonta, päivitäsanonta}
-
-/* addNewQuote = (newquote) => {
-    this.state.sanonta.push(newquote);
-    console.log(newquote);
-    this.setState({ seuraavaid: this.state.seuraavaid + 1 });
-} */
-
-/* poista = (poistettavaID) => {
-        console.log(poistettavaID)
-        var index = this.state.sanonta.findIndex((quot) => quot.id === poistettavaID);
-        this.state.sanonta.splice(index, 1);
-        this.setState(this.state);
-    } */
+export {haesanonnat, poistasanonta, luosanonta}

@@ -6,7 +6,8 @@ function App() {
   return (
     <div className="App">
       <header>
-        <h1>React lomake 2</h1>
+        <h1>Sanonnat App</h1>
+        <h2>Lisää suosikkisi</h2>
       </header>
       <main>
         <QuoteBox />
